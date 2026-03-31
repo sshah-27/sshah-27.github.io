@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PERSONALIZATION: Change the title to update your browser tab text -->
     <title>Sahil Shah | Personal Website</title>
     <style>
+        /* ===== GLOBAL STYLES ===== */
+        /* Reset default browser spacing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* PERSONALIZATION: Color scheme - Change these values to customize your site colors */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --text-color: #1f2937;
-            --light-bg: #f9fafb;
+            --primary-color: #2563eb;      /* Main blue color - used for headings and buttons */
+            --secondary-color: #1e40af;    /* Darker blue - used for hover effects */
+            --text-color: #1f2937;         /* Dark gray for main text */
+            --light-bg: #f9fafb;           /* Light gray background for alternating sections */
             --white: #ffffff;
-            --gray: #6b7280;
+            --gray: #6b7280;               /* Medium gray for secondary text */
         }
 
+        /* Base font and text styling for entire page */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -27,16 +32,18 @@
             overflow-x: hidden;
         }
 
-        /* Header/Navigation */
+        /* ===== HEADER / NAVIGATION ===== */
+        /* Fixed navigation bar that stays at top when scrolling */
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
+            z-index: 1000;  /* Ensures nav stays on top of other content */
         }
 
+        /* Navigation container - centers content and adds padding */
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -46,36 +53,43 @@
             align-items: center;
         }
 
+        /* PERSONALIZATION: Logo/initials in top-left corner */
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary-color);
+            /* TIP: Change "SS" text in HTML to your initials */
         }
 
+        /* Navigation links container */
         .nav-links {
             display: flex;
-            list-style: none;
-            gap: 2rem;
+            list-style: none;  /* Removes bullet points */
+            gap: 2rem;         /* Space between nav items */
         }
 
+        /* Individual navigation link styling */
         .nav-links a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s;  /* Smooth color change on hover */
         }
 
+        /* Hover effect for nav links */
         .nav-links a:hover {
             color: var(--primary-color);
         }
 
-        /* Hero Section */
+        /* ===== HERO SECTION ===== */
+        /* PERSONALIZATION: Top section with gradient background */
         #hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Change gradient colors here for different look */
+            background: linear-gradient(135deg, #FFFFFF 0%, #000000 100%);
             color: var(--white);
             padding: 120px 2rem 80px;
             text-align: center;
-            min-height: 100vh;
+            min-height: 100vh;  /* Takes up full screen height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -85,56 +99,65 @@
             max-width: 800px;
         }
 
+        /* PERSONALIZATION: Profile picture styling */
         .profile-img {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
+            border-radius: 50%;  /* Makes image circular */
             border: 5px solid var(--white);
             margin-bottom: 2rem;
-            object-fit: cover;
+            object-fit: cover;   /* Ensures image fills circle properly */
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            /* TIP: Replace placeholder URL in HTML with your photo */
         }
 
+        /* Main heading (your name) */
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            animation: fadeInUp 1s ease;  /* Entrance animation */
         }
 
+        /* PERSONALIZATION: Subtitle under your name */
         .tagline {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
             animation: fadeInUp 1s ease 0.2s backwards;
+            /* TIP: Edit text in HTML to describe yourself */
         }
 
+        /* Container for Call-To-Action buttons */
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: wrap;  /* Buttons wrap on small screens */
             animation: fadeInUp 1s ease 0.4s backwards;
         }
 
+        /* Base button styling */
         .btn {
             padding: 12px 30px;
-            border-radius: 50px;
+            border-radius: 50px;  /* Rounded pill shape */
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             display: inline-block;
         }
 
+        /* Primary button style (solid background) */
         .btn-primary {
             background: var(--white);
             color: var(--primary-color);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px);  /* Lifts button up on hover */
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
+        /* Secondary button style (outline only) */
         .btn-secondary {
             background: transparent;
             color: var(--white);
@@ -146,17 +169,20 @@
             color: var(--primary-color);
         }
 
-        /* Section Styles */
+        /* ===== SECTION STYLES ===== */
+        /* General styling for all content sections */
         section {
             padding: 80px 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        /* Alternating background colors for visual separation */
         section:nth-child(even) {
             background: var(--light-bg);
         }
 
+        /* Section headings */
         h2 {
             font-size: 2.5rem;
             margin-bottom: 3rem;
@@ -164,20 +190,24 @@
             color: var(--primary-color);
         }
 
-        /* About Section */
+        /* ===== ABOUT SECTION ===== */
+        /* Two-column layout for About section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;  /* Equal width columns */
             gap: 3rem;
             align-items: center;
         }
 
+        /* PERSONALIZATION: About section paragraph text */
         .about-text p {
             margin-bottom: 1rem;
             font-size: 1.1rem;
             color: var(--gray);
+            /* TIP: Edit your bio in the HTML */
         }
 
+        /* PERSONALIZATION: Skills container */
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -185,21 +215,25 @@
             margin-top: 1.5rem;
         }
 
+        /* Individual skill tags/badges */
         .skill-tag {
             background: var(--primary-color);
             color: var(--white);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9rem;
+            /* TIP: Add/remove skill tags in HTML to match your skills */
         }
 
-        /* Projects Section */
+        /* ===== PROJECTS SECTION ===== */
+        /* Grid layout for project cards - automatically adjusts columns */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
+        /* Individual project card styling */
         .project-card {
             background: var(--white);
             border-radius: 10px;
@@ -208,11 +242,13 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
+        /* Hover effect - card lifts up */
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
+        /* PERSONALIZATION: Project card image/icon area */
         .project-img {
             width: 100%;
             height: 200px;
@@ -220,23 +256,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 3rem;  /* Size of emoji icon */
+            /* TIP: Replace emoji in HTML or add actual project screenshot */
         }
 
+        /* Project card text content area */
         .project-content {
             padding: 1.5rem;
         }
 
+        /* Project title */
         .project-content h3 {
             margin-bottom: 0.5rem;
             color: var(--primary-color);
         }
 
+        /* PERSONALIZATION: Project description */
         .project-content p {
             color: var(--gray);
             margin-bottom: 1rem;
+            /* TIP: Write brief project descriptions in HTML */
         }
 
+        /* Links to GitHub and live demo */
         .project-links {
             display: flex;
             gap: 1rem;
@@ -247,21 +289,25 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
+            /* TIP: Update URLs in HTML to point to your actual projects */
         }
 
-        /* Contact Section */
+        /* ===== CONTACT SECTION ===== */
         .contact-content {
             max-width: 600px;
             margin: 0 auto;
             text-align: center;
         }
 
+        /* PERSONALIZATION: Contact section description */
         .contact-content p {
             font-size: 1.2rem;
             color: var(--gray);
             margin-bottom: 2rem;
+            /* TIP: Edit contact text in HTML */
         }
 
+        /* Social media icons container */
         .social-links {
             display: flex;
             justify-content: center;
@@ -269,10 +315,11 @@
             margin-top: 2rem;
         }
 
+        /* PERSONALIZATION: Individual social media icon styling */
         .social-links a {
             width: 50px;
             height: 50px;
-            border-radius: 50%;
+            border-radius: 50%;  /* Makes icons circular */
             background: var(--primary-color);
             color: var(--white);
             display: flex;
@@ -281,22 +328,25 @@
             text-decoration: none;
             font-size: 1.5rem;
             transition: all 0.3s;
+            /* TIP: Update social media URLs in HTML */
         }
 
         .social-links a:hover {
             background: var(--secondary-color);
-            transform: scale(1.1);
+            transform: scale(1.1);  /* Grows slightly on hover */
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             background: var(--text-color);
             color: var(--white);
             text-align: center;
             padding: 2rem;
+            /* TIP: Update copyright year in HTML */
         }
 
-        /* Animations */
+        /* ===== ANIMATIONS ===== */
+        /* Fade in and slide up animation for hero section elements */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -308,7 +358,7 @@
             }
         }
 
-        /* Mobile Menu Toggle */
+        /* Mobile menu hamburger button (hidden on desktop) */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -318,8 +368,10 @@
             color: var(--text-color);
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE DESIGN ===== */
+        /* Styles for tablets and mobile phones */
         @media (max-width: 768px) {
+            /* Smaller heading on mobile */
             h1 {
                 font-size: 2rem;
             }
@@ -328,12 +380,14 @@
                 font-size: 1rem;
             }
 
+            /* Stack About section vertically on mobile */
             .about-content {
                 grid-template-columns: 1fr;
             }
 
+            /* Mobile navigation menu - hidden by default */
             .nav-links {
-                display: none;
+                display: none;  /* Hidden until hamburger is clicked */
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -344,19 +398,23 @@
                 box-shadow: 0 5px 10px rgba(0,0,0,0.1);
             }
 
+            /* Show menu when hamburger is clicked */
             .nav-links.active {
                 display: flex;
             }
 
+            /* Show hamburger menu on mobile */
             .mobile-menu-toggle {
                 display: block;
             }
 
+            /* Stack CTA buttons vertically on mobile */
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
+            /* Single column for projects on mobile */
             .projects-grid {
                 grid-template-columns: 1fr;
             }
@@ -364,11 +422,17 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- ===== NAVIGATION BAR ===== -->
     <header>
         <nav>
+            <!-- PERSONALIZATION: Change "SS" to your initials -->
             <div class="logo">SS</div>
+            
+            <!-- Hamburger menu button (visible on mobile only) -->
             <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            
+            <!-- Navigation menu links -->
+            <!-- TIP: Links use #id to jump to sections on the same page -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" onclick="closeMenu()">Home</a></li>
                 <li><a href="#about" onclick="closeMenu()">About</a></li>
@@ -378,12 +442,20 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
+    <!-- First section visitors see - introduce yourself here -->
     <section id="hero">
         <div class="hero-content">
+            <!-- PERSONALIZATION: Replace placeholder with your profile photo URL -->
             <img src="https://via.placeholder.com/180" alt="Sahil Shah" class="profile-img">
+            
+            <!-- PERSONALIZATION: Your name -->
             <h1>Hi, I'm Sahil Shah</h1>
+            
+            <!-- PERSONALIZATION: Your professional title/tagline -->
             <p class="tagline">Developer | Designer | Problem Solver</p>
+            
+            <!-- Call-to-action buttons -->
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -391,13 +463,17 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===== ABOUT SECTION ===== -->
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
             <div class="about-text">
+                <!-- PERSONALIZATION: Write your bio here (2-3 paragraphs recommended) -->
                 <p>Hello! I'm Sahil Shah, a passionate developer with a keen interest in creating elegant solutions to complex problems.</p>
                 <p>I love building web applications, exploring new technologies, and continuously learning to improve my craft. When I'm not coding, you can find me reading, exploring new places, or working on side projects.</p>
+                
+                <!-- PERSONALIZATION: Add/remove/edit skills to match your expertise -->
+                <!-- TIP: Each skill appears as a colored badge -->
                 <div class="skills">
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">Python</span>
@@ -407,6 +483,8 @@
                     <span class="skill-tag">Git</span>
                 </div>
             </div>
+            
+            <!-- Decorative SVG graphic (optional - can be removed or replaced) -->
             <div class="about-image">
                 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                     <rect width="500" height="500" fill="#667eea" opacity="0.1"/>
@@ -418,15 +496,24 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ===== PROJECTS SECTION ===== -->
     <section id="projects">
         <h2>My Projects</h2>
         <div class="projects-grid">
+            
+            <!-- PROJECT CARD 1 -->
+            <!-- PERSONALIZATION: Copy entire project-card div to add more projects -->
             <div class="project-card">
+                <!-- TIP: Replace emoji with actual screenshot or keep as decorative icon -->
                 <div class="project-img">🚀</div>
                 <div class="project-content">
+                    <!-- PERSONALIZATION: Project title -->
                     <h3>Project One</h3>
+                    
+                    <!-- PERSONALIZATION: Brief project description (1-2 sentences) -->
                     <p>A brief description of your awesome project and the technologies used to build it.</p>
+                    
+                    <!-- PERSONALIZATION: Update URLs to your actual project links -->
                     <div class="project-links">
                         <a href="https://github.com/sshah-27" target="_blank">GitHub →</a>
                         <a href="#" target="_blank">Live Demo →</a>
@@ -434,6 +521,7 @@
                 </div>
             </div>
 
+            <!-- PROJECT CARD 2 -->
             <div class="project-card">
                 <div class="project-img">💻</div>
                 <div class="project-content">
@@ -446,6 +534,7 @@
                 </div>
             </div>
 
+            <!-- PROJECT CARD 3 -->
             <div class="project-card">
                 <div class="project-img">🎨</div>
                 <div class="project-content">
@@ -460,23 +549,34 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact">
         <h2>Get In Touch</h2>
         <div class="contact-content">
+            <!-- PERSONALIZATION: Contact message -->
             <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            
+            <!-- PERSONALIZATION: Update with your actual email address -->
             <a href="mailto:your.email@example.com" class="btn btn-primary">Send Me an Email</a>
+            
+            <!-- PERSONALIZATION: Update all social media links below -->
+            <!-- TIP: Remove any social platforms you don't use -->
             <div class="social-links">
+                <!-- GitHub link -->
                 <a href="https://github.com/sshah-27" target="_blank" title="GitHub">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
+                
+                <!-- LinkedIn link -->
                 <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
                 </a>
+                
+                <!-- Twitter link -->
                 <a href="https://twitter.com/yourhandle" target="_blank" title="Twitter">
                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
@@ -486,38 +586,45 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
+        <!-- PERSONALIZATION: Update copyright year and name -->
         <p>&copy; 2024 Sahil Shah. All rights reserved.</p>
     </footer>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle function
+        // Opens/closes the navigation menu when hamburger icon is clicked
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('active');  // Adds or removes 'active' class
         }
 
+        // Close mobile menu function
+        // Called when a navigation link is clicked
         function closeMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.remove('active');
         }
 
         // Smooth scrolling for navigation links
+        // Makes page scroll smoothly instead of jumping when clicking nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+                e.preventDefault();  // Prevents default jump behavior
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: 'smooth',  // Smooth scroll animation
                         block: 'start'
                     });
                 }
             });
         });
 
-        // Add scroll effect to header
+        // Header shadow effect on scroll
+        // Adds more prominent shadow to header when user scrolls down
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
